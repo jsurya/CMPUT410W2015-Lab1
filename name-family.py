@@ -12,6 +12,17 @@ class Student():
         self.courseMarks[course] = mark
 
     def average(self):
+    	"""
+    	testing:
+    	>>> c = Student("A", "Family")
+
+    	>>> c.addCourseMark("Biology", 100)
+
+	>>> c.addCourseMark("Chemistry", 80)
+
+	>>> c.average()
+	90
+    	"""
         marksSum = 0
         for c in self.courseMarks:
             marksSum += self.courseMarks.get(c)
@@ -22,10 +33,14 @@ newStudent = Student("Student", "Family")
 print newStudent.name
 print newStudent.courseMarks
 
-newStudent.addCourseMark("Biology", 100)
+newStudent.addCourseMark("Biology", 87)
 print newStudent.courseMarks
 
-newStudent.addCourseMark("Chemistry", 80)
+newStudent.addCourseMark("Chemistry", 68)
 print newStudent.courseMarks
 
 print newStudent.average()
+
+if __name__ == "__main__":
+	import doctest
+	doctest.testmod()
